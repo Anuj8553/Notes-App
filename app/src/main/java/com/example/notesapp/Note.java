@@ -3,14 +3,17 @@ package com.example.notesapp;
 import com.google.firebase.Timestamp;
 
 public class Note {
-    String title;
+     static String title;
+     //TODO string changed to static to use in widget
     String content;
 
+
+    Timestamp timestamp;
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
 
-    Timestamp timestamp;
+
     public Note() {
     }
 

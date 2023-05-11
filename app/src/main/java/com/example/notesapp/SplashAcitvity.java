@@ -26,7 +26,7 @@ public class SplashAcitvity extends AppCompatActivity {
                 }else{
                     startActivity(new Intent(SplashAcitvity.this,MainActivity.class));
                 }
-                startActivity(new Intent(SplashAcitvity.this,CreatAccountActivity.class));
+
                 finish();
             }
         },1000);

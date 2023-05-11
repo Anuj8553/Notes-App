@@ -25,9 +25,10 @@ public class NoteAdapter extends FirestoreRecyclerAdapter<Note,NoteAdapter.NoteV
 
     @Override
     protected void onBindViewHolder(@NonNull NoteViewHolder holder, int position, @NonNull Note note) {
+
         holder.titleTextView.setText(note.title);
         holder.contentTextView.setText(note.content);
-       // TODO holder.timestampTextView.setText(Utility.timestampToString(note.timestamp));
+        holder.timestampTextView.setText(Utility.timestampToString(note.timestamp));
         holder.itemView.setOnClickListener((v)->{
             Intent intent = new Intent(context,NoteDetailsActivity.class);
            intent.putExtra("title",note.title);
@@ -35,7 +36,6 @@ public class NoteAdapter extends FirestoreRecyclerAdapter<Note,NoteAdapter.NoteV
            String docId = this.getSnapshots().getSnapshot(position).getId();
            intent.putExtra("docId",docId);
            context.startActivity(intent);
-
         });
 
     }
